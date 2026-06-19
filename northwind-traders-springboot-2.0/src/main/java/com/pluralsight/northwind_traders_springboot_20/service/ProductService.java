@@ -36,11 +36,20 @@ public class ProductService {
 
     // post - create
     //add a new product
+    public Product addProduct(Product product) {
+        return productRepository.save(product);
+    }
 
     // put - update
 
     // delete - remove
-    // deleet a product by ID
+    // delete  a product by ID
+    public void deleteProductById(int id) {
+        productRepository.deleteById(id);
+    }
 
+    //controller asks
+    //service thinks
+    //repository fetches
 
 }
