@@ -33,4 +33,22 @@ public class Product {
     public Double getPrice() {
         return price;
     }
+
+    //add setters
+
+    public void setProductID(Integer productID) {
+        this.productID = productID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 }
