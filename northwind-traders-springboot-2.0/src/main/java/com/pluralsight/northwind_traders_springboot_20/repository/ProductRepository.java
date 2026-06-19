@@ -7,8 +7,12 @@ import org.springframework.stereotype.Repository;
 
 
     @Repository
-    public interface ProductRepository  extends JpaRepository <Product, String>{
-        List<Product> findByTrackIgnorecase(String )
+    public interface ProductRepository extends JpaRepository <Product, String>{
+        List<Product> findByProductIdContainingIgnoreCase(Integer productId);
+        List<Product> findByNameContainingIgnoreCase(String name);
+        List<Product> findByCategoryContainingIgnoreCase(String category);
+        List<Product> findByPriceContainingIgnoreCase(Double price);
+
 
 
 }
