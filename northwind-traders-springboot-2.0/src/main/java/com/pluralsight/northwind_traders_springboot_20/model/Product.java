@@ -19,8 +19,8 @@ public class Product {
     @Column(name = "UnitPrice")
     private Double unitPrice;
 
-    @Column(name = "Category")
-    private String category;
+    @Column(name = "CategoryID")
+    private Integer categoryID;
 
 
 
@@ -34,8 +34,8 @@ public class Product {
         return productName;
     }
 
-    public String getCategory() {
-     return category;
+    public Integer getCategoryID() {
+     return categoryID;
     }
 
     public Double getUnitPrice() {
@@ -56,7 +56,7 @@ public class Product {
         this.unitPrice = unitPrice;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategoryID(Integer categoryID) {
+        this.categoryID = categoryID;
     }
 }
