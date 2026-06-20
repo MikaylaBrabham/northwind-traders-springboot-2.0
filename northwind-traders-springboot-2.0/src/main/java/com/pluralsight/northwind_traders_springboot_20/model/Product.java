@@ -1,6 +1,7 @@
 package com.pluralsight.northwind_traders_springboot_20.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "products")
@@ -17,10 +18,10 @@ public class Product {
 
 
     @Column(name = "UnitPrice")
-    private Double unitPrice;
+    private BigDecimal unitPrice;
 
     @Column(name = "CategoryID")
-    private Integer CategoryID;
+    private Integer categoryID;
 
     public Product() {
     }
@@ -36,12 +37,30 @@ public class Product {
         return productName;
     }
 
-    public Double getUnitPrice() {
+    public BigDecimal getUnitPrice() {
         return unitPrice;
     }
 
     public Integer getCategoryID() {
-        return CategoryID;
+        return categoryID;
+    }
+
+    //setters
+
+    public void setProductID(Integer productID) {
+        this.productID = productID;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public void setCategoryID(Integer categoryID) {
+        this.categoryID = categoryID;
     }
 }
 
