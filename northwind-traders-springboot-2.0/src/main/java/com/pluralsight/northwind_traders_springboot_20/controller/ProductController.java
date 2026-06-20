@@ -32,13 +32,22 @@ public class ProductController {
     public ResponseEntity<Product> getProductById(@PathVariable int id) {
         return productService.getProductById(id)
                 .map(product -> ResponseEntity.ok(product))
+                //get error 404 or product
                 .orElse(ResponseEntity.notFound().build());
     }
 
     //add post products w/endpoints
     @PostMapping
+    public Product addProduct (@RequestBody Product product) {
+        return productService.addProduct(product);
+    }
 
     //delete products by id w/endpoints
-    @DeleteMapping
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProductById(@PathVariable int id) {
+        productService.deleteProductById(id);
+        //error 204 no content
+        return ResponseEntity.noContent().build();
+    }
 }
 
