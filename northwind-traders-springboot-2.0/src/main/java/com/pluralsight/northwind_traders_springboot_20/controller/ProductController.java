@@ -17,5 +17,13 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
+
+    //add get mapping all products w/ endpoints
+
+    //add get product by id w/ endpoints
+
+    //add post products w/endpoints
+
+    //delete products by id w/endpoints
 }
 
