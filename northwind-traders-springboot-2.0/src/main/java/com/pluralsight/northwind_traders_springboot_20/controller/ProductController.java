@@ -1,8 +1,10 @@
 package com.pluralsight.northwind_traders_springboot_20.controller;
 
+import com.pluralsight.northwind_traders_springboot_20.model.Product;
 import com.pluralsight.northwind_traders_springboot_20.service.ProductService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 //add rest controller with the default mapping for products
 @RestController
@@ -19,11 +21,18 @@ public class ProductController {
     }
 
     //add get mapping all products w/ endpoints
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
 
     //add get product by id w/ endpoints
+    @GetMapping
 
     //add post products w/endpoints
+    @PostMapping
 
     //delete products by id w/endpoints
+    @DeleteMapping
 }
 
