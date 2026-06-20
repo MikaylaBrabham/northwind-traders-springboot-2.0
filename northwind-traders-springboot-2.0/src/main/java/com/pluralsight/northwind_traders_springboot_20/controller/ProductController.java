@@ -2,6 +2,7 @@ package com.pluralsight.northwind_traders_springboot_20.controller;
 
 import com.pluralsight.northwind_traders_springboot_20.model.Product;
 import com.pluralsight.northwind_traders_springboot_20.service.ProductService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,12 @@ public class ProductController {
     }
 
     //add get product by id w/ endpoints
-    @GetMapping
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable int id) {
+        return productService.getProductById(id)
+                .map(product -> ResponseEntity.ok(product))
+                .orElse(ResponseEntity.notFound().build());
+    }
 
     //add post products w/endpoints
     @PostMapping
