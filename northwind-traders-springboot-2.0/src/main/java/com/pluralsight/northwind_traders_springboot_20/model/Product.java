@@ -20,8 +20,10 @@ public class Product {
     private Double unitPrice;
 
     @Column(name = "CategoryID")
-    private Integer categoryID;
+    private Integer CategoryID;
 
+    public Product() {
+    }
 
 
     //add getters
@@ -34,29 +36,12 @@ public class Product {
         return productName;
     }
 
-    public Integer getCategoryID() {
-     return categoryID;
-    }
-
     public Double getUnitPrice() {
         return unitPrice;
     }
 
-    //add setters
-
-    public void setProductID(Integer productID) {
-        this.productID = productID;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setUnitPrice(Double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public void setCategoryID(Integer categoryID) {
-        this.categoryID = categoryID;
+    public Integer getCategoryID() {
+        return CategoryID;
     }
 }
+
