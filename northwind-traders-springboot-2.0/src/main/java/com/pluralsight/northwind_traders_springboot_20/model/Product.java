@@ -7,13 +7,21 @@ import jakarta.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    //get variables
+    @Column(name = "ProductID")
     private Integer productID;
-    private String name;
+    //get variables
+
+
+    @Column(name = "ProductName")
+    private String productName;
+
+
+    @Column(name = "UnitPrice")
+    private Double unitPrice;
+
+    @Column(name = "Category")
     private String category;
-    private Double price;
+
 
 
     //add getters
@@ -22,16 +30,16 @@ public class Product {
         return productID;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
     public String getCategory() {
-        return category;
+     return category;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getUnitPrice() {
+        return unitPrice;
     }
 
     //add setters
@@ -40,15 +48,15 @@ public class Product {
         this.productID = productID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 }
